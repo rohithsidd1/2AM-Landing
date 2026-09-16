@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Archivo:wdth,wght@112,600..800&family=Geologica:wght@400;700;800;900&family=Gilda+Display&family=Dela+Gothic+One&family=Cal+Sans&family=Boldonse&family=Ojuju:wght@600;700;800&family=Jost:wght@700;800;900&family=Poppins:wght@700;800;900&family=Figtree:wght@700;800;900&family=Questrial&family=Funnel+Display:wght@600;700;800&family=Bricolage+Grotesque:wght@700;800&family=Syne:wght@700;800&family=Archivo+Black&family=Anton&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+    @font-face { font-family: 'Paperlogy'; font-weight: 800; font-style: normal; font-display: swap; src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy-8ExtraBold.woff2') format('woff2'); }
+  @font-face { font-family: 'Paperlogy'; font-weight: 900; font-style: normal; font-display: swap; src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy-9Black.woff2') format('woff2'); }
+  @font-face { font-family: 'Basteleur'; font-weight: 100 900; font-style: normal; font-display: swap; src: url('https://cdn.jsdelivr.net/gh/jaywcjlove/free-font/docs/fonts/english/Basteleur/Basteleur-Bold.ttf') format('truetype'); }
+  @font-face { font-family: 'Rot'; font-weight: 400; font-style: normal; font-display: swap; src: url('https://cdn.jsdelivr.net/gh/anrt-type/GoticoAntiqua@master/fonts/Rot-ProtoRoman102R.otf') format('opentype'); }
+  html { --ns-hero: 'Big Shoulders Display', Archivo, Impact, sans-serif; --ns-lh: 1.16; --ns-scale: 1; --ns-weight: 900; --ns-display: Geologica, 'Gilda Display', Rot, 'Dela Gothic One', 'Cal Sans', Boldonse, Basteleur, Paperlogy, 'Wanted Sans Variable', Jost, Impact, sans-serif; }
+  html, body { margin: 0; background: #FFFFFF; overflow-x: clip; -webkit-font-smoothing: antialiased; font-family: 'Onest', Helvetica, Arial, sans-serif; color: #0A1B2A; }
+  a { color: #0A1B2A; text-decoration: none; }
+  a:hover { opacity: .68; }
+  @media (max-width: 900px) { [data-split] { grid-template-columns: 1fr !important; } }
+  @media (max-width: 760px) {
+    [data-wiseband] { grid-template-columns: 1fr !important; row-gap: 20px !important; }
+  }
+  @media (max-width: 860px) {
+    [data-stats] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important; }
+  }
+  @media (max-width: 480px) {
+    [data-nav-links] { gap: 14px; font-size: 14px; }
+    [data-nav-actions] { gap: 14px; }
+  }
+  @media (max-width: 780px) {
+    [data-nav] { justify-content: center; row-gap: 12px; }
+    [data-nav-brand] { order: -1; flex: 1 0 100%; justify-content: center; }
+    [data-nav-links] { flex: 1 1 100%; justify-content: center; }
+    [data-nav-actions] { flex: 1 1 100%; justify-content: center; }
+  }
+  @keyframes nsUp { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes nsMq { from { transform: translate3d(0,0,0); } to { transform: translate3d(-25%,0,0); } }
+  @media (prefers-reduced-motion: reduce) { .ns-mq-track { animation: none !important; } }
+  @keyframes nsPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+  @keyframes nsRingFill { from { stroke-dashoffset: 157.1px; } to { stroke-dashoffset: 0px; } }
+  @keyframes nsBlink { 0%, 45% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  .ns-canvas { will-change: opacity, transform; }
+  .ns-ringfg { will-change: stroke-dashoffset; }
+  [data-stepper] { font-family: 'Onest', Helvetica, Arial, sans-serif; }
+  .ns-quotes::-webkit-scrollbar { display: none; }
+  .ns-quotes { -ms-overflow-style: none; }
+  @media (max-width: 900px) { [data-carcol] { transform: none !important; } }
+</style>
+</helmet>
+
+<div style="font-family: 'Onest', Helvetica, Arial, sans-serif; color: #0A1B2A; background: #FFFFFF;">
+
+  <nav style="position: sticky; top: 0; z-index: 60; background: #FFFFFF;">
+    <div style="max-width: 1240px; margin: 0 auto; box-sizing: border-box; padding: 14px clamp(16px, 2.4vw, 28px); min-height: 76px; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(10px, 1.6vw, 24px);" data-nav="true">
+      <div data-nav-links="true" style="flex: 1 1 200px; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(16px, 2.6vw, 38px); font-size: clamp(14px, 1.3vw, 16px); font-weight: 400;">
+        <a href="#how" style="color: #0A1B2A;">How it works</a>
+        <a href="#people" style="color: #0A1B2A;">Who you'll meet</a>
+        <a href="#session" style="color: #0A1B2A;">The session</a>
+      </div>
+      <a href="#top" data-nav-brand="true" style="flex: none; display: flex; align-items: center; gap: 5px; font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((23px) * var(--ns-scale)); letter-spacing: .01em; text-transform: uppercase;">2AM<span style="width: 7px; height: 7px; background: #9FE870; display: inline-block; margin-bottom: 11px;"></span></a>
+      <div data-nav-actions="true" style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: clamp(14px, 1.8vw, 22px);">
+        <a href="#top" style="font-size: 15px; font-weight: 500; color: #0A1B2A;">Log in</a>
+        <a href="#cta" style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid rgba(10,27,42,.9); color: #0A1B2A; font-size: 14px; font-weight: 700; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.04); box-shadow: 0 10px 26px rgba(10,27,42,.14); opacity: 1;">Find a builder</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="top" style="background: #FFFFFF; color: #0A1B2A; padding: 80px clamp(14px, 2.2vw, 24px) clamp(14px, 2.2vw, 24px);">
+    <div style="max-width: 1060px; margin: 0 auto 80px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <span data-reveal="true" style="display: inline-block; margin: 0 0 clamp(18px, 2.2vw, 26px); padding: 6px 12px; border-radius: 6px; background: #9FE870; font-size: 14px; font-weight: 700; letter-spacing: -.01em;">23 builders online</span>
+      <h1 data-fit="true" data-fit-max="92" data-fit-ratio="1" style="width: 100%; max-width: 760px; margin: 0 auto clamp(20px, 2.4vw, 28px); font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(32px, 7vw, 92px); line-height: .98; letter-spacing: -.032em;">
+        <span style="display: block; overflow: hidden; padding-bottom: .1em;"><span data-fit-line="true" style="display: block; white-space: nowrap; animation: nsUp 300ms cubic-bezier(.2,.7,.3,1) both;">Build with someone.</span></span>
+        <span style="display: block; overflow: hidden; padding-bottom: .1em;"><span data-fit-line="true" style="display: block; white-space: nowrap; animation: nsUp 300ms cubic-bezier(.2,.7,.3,1) 90ms both;">Right now.</span></span>
+      </h1>
+      <p style="max-width: 500px; margin: 0 auto clamp(24px, 2.8vw, 32px); font-size: clamp(15px, 1.4vw, 17px); line-height: 1.5; color: rgba(10,27,42,.7);">2AM matches you with another builder for a live 25-minute session. Audio, screen share, shared editor. No scheduling.</p>
+      <a href="#cta" style="display: inline-flex; align-items: center; height: clamp(48px, 4vw, 54px); padding: 0 clamp(24px, 2.4vw, 30px); border-radius: 999px; background: #9FE870; color: #0A1B2A; font-size: clamp(15px, 1.3vw, 16px); font-weight: 700; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.04); box-shadow: 0 16px 38px rgba(10,27,42,.18); opacity: 1;">Find a builder</a>
+    </div>
+
+    <div style="position: relative; border-radius: clamp(16px, 2.4vw, 32px); overflow: hidden; background: #262320; min-height: max(clamp(420px, 78vh, 940px), clamp(420px, 52vw, 940px)); display: grid; place-items: center;">
+      <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; letter-spacing: .14em; color: rgba(255,252,247,.6); text-align: center; padding: 16px;">Photo: builder on a late-night remote session, screen-lit, 16:9</span>
+      <img src="https://images.unsplash.com/photo-1573627856541-a513441cd5e2?w=2000&amp;q=80&amp;auto=format&amp;fit=crop" alt="" onError="{{ hideImg }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+  </section>
+
+  
+
+    </div>
+  </section>
+
+  <section style="background: #FFFFFF; color: #0A1B2A; padding: 160px clamp(16px, 2.4vw, 28px);">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <span data-reveal="true" style="display: inline-block; margin: 0 0 clamp(18px, 2.2vw, 26px); padding: 6px 12px; border-radius: 6px; background: #9FE870; font-size: 14px; font-weight: 700; letter-spacing: -.01em;">No calendars, no waiting</span>
+      <h2 data-reveal="true" style="max-width: 860px; margin: 0 auto clamp(20px, 2.4vw, 28px); font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 5.4vw, 64px); line-height: 1.02; letter-spacing: -.03em;">Solo is where projects go quiet.</h2>
+      <p data-reveal="true" style="max-width: 600px; margin: 0; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.55; color: rgba(10,27,42,.7);">The idea's good. The energy dies anyway — no one to argue with, no one watching, no reason to finish tonight. That's not a discipline problem. That's a missing person.</p>
+    </div>
+  </section>
+
+  <section id="session" style="position: relative; overflow: visible; background: #F5F4F0; padding: clamp(200px, 22vw, 260px) clamp(16px, 2.4vw, 28px) 160px;">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: -1px; width: 100%; height: clamp(48px, 8vw, 90px); display: block; transform: rotate(180deg);"><path d="M0 0 C 420 90 1020 90 1440 0 L1440 90 L0 90 Z" fill="#FFFFFF"></path></svg>
+    <div style="max-width: 1240px; margin: 0 auto; container-type: inline-size; text-align: center;">
+      <h2 data-reveal="true" style="max-width: 860px; margin: 0 auto clamp(20px, 2.4vw, 28px); font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 5.4vw, 64px); line-height: 1.02; letter-spacing: -.03em;">Different skills. Same table.</h2>
+      <div data-wiseband="true" style="max-width: 1160px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) 0 clamp(48px, 6vw, 88px); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); text-align: left;">
+        <div data-reveal="true" style="display: flex; align-items: center; gap: 20px; min-width: 0;">
+          <span style="flex: none; width: clamp(80px, 7vw, 104px); height: clamp(80px, 7vw, 104px); border-radius: 50%; background: rgba(159,232,112,.4); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" /></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; letter-spacing: -.01em;">Awake right now</span>
+            <span style="font-size: clamp(15px, 1.5vw, 16px); line-height: 1.55; color: rgba(10,27,42,.66);">Matched with a builder who’s online.</span>
+          </span>
+        </div>
+        <div data-reveal="true" style="display: flex; align-items: center; gap: 20px; min-width: 0;">
+          <span style="flex: none; width: clamp(80px, 7vw, 104px); height: clamp(80px, 7vw, 104px); border-radius: 50%; background: rgba(159,232,112,.4); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5M12 6.5v0" /><circle cx="12" cy="13.5" r="7.5" /><path d="M12 10v3.5l2.5 1.5" /></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; letter-spacing: -.01em;">25 minutes, then out</span>
+            <span style="font-size: clamp(15px, 1.5vw, 16px); line-height: 1.55; color: rgba(10,27,42,.66);">No calendar invite. Ever.</span>
+          </span>
+        </div>
+        <div data-reveal="true" style="display: flex; align-items: center; gap: 20px; min-width: 0;">
+          <span style="flex: none; width: clamp(80px, 7vw, 104px); height: clamp(80px, 7vw, 104px); border-radius: 50%; background: rgba(159,232,112,.4); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; letter-spacing: -.01em;">Camera optional</span>
+            <span style="font-size: clamp(15px, 1.5vw, 16px); line-height: 1.55; color: rgba(10,27,42,.66);">Audio, screen share, shared editor.</span>
+          </span>
+        </div>
+      </div>
+      <div data-split="true" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; text-align: left;">
+        <div data-reveal="true" style="min-width: 0; container-type: inline-size;">
+          <h3 style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((clamp(30px, 10cqw, 44px)) * var(--ns-scale)); line-height: var(--ns-lh); letter-spacing: -.02em; margin: 0 0 16px;">Two people, one screen, 25 minutes.</h3>
+          <p style="max-width: 440px; margin: 0 0 clamp(24px, 3vw, 36px); font-size: clamp(16px, 1.8vw, 20px); line-height: 1.5; color: rgba(10,27,42,.7);">Everyone here lacks the exact skill someone else has — so you skip the small talk, build free for 25 minutes, and let the timer end it for you.</p>
+          <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(10,27,42,.14); margin-bottom: clamp(24px, 3vw, 36px);">
+            <div style="display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(10,27,42,.14);">
+              <span style="flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(10,27,42,.18); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 3 6 13.5h5l-1 7.5 8-11h-5z" /></svg></span>
+              <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; letter-spacing: -.01em;">Online now</span>
+                <span style="font-size: clamp(15px, 1.5vw, 16px); line-height: 1.55; color: rgba(10,27,42,.66);">Someone is at their desk when you press the button.</span>
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(10,27,42,.14);">
+              <span style="flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(10,27,42,.18); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5M12 6.5v0" /><circle cx="12" cy="13.5" r="7.5" /><path d="M12 10v3.5l2.5 1.5" /></svg></span>
+              <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; letter-spacing: -.01em;">25 minutes</span>
+                <span style="font-size: clamp(15px, 1.5vw, 16px); line-height: 1.55; color: rgba(10,27,42,.66);">One focused session, then you both get back to it.</span>
+              </span>
+            </div>
+          </div>
+          <a href="#cta" style="display: inline-flex; align-items: center; justify-content: center; padding: 0 clamp(24px, 3vw, 36px); height: clamp(44px, 3.8vw, 52px); margin-top: clamp(24px, 3vw, 36px); border-radius: 999px; background: #9FE870; color: #0A1B2A; font-size: clamp(15px, 1.4vw, 16px); font-weight: 600; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.02); box-shadow: 0 12px 28px rgba(10,27,42,.18); opacity: 1;">Find a builder</a>
+        </div>
+        <div data-reveal="true" style="min-width: 0;">
+          <div style="position: relative; border-radius: clamp(16px, 2.4vw, 32px); overflow: hidden; background: #262320; min-height: clamp(560px, 52vw, 840px); display: grid; place-items: center;">
+            <span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: .14em; color: rgba(255,252,247,.6); text-align: center; padding: 16px;">Photo: late-night builder session, wide</span>
+            <img src="./uploads/session-builder.jpg" alt="" onError="{{ hideImg }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #FFFFFF; color: #0A1B2A; padding: 80px clamp(16px, 2.4vw, 28px);">
+    <div data-stepper="true" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;" onMouseEnter="{{ hoverOn }}" onMouseLeave="{{ hoverOff }}">
+
+      <div data-reveal="true" style="min-width: 0;">
+        <div style="position: relative; border-radius: 32px; overflow: hidden; aspect-ratio: 1 / 1; background: {{ cardBg }}; transition: background-color 400ms cubic-bezier(0.22,1,0.36,1); padding: 80px 0 0; box-sizing: border-box;">
+
+          <div class="ns-canvas" style="position: absolute; left: 50%; bottom: -14%; width: min(90%, 470px); height: 102%; background: #FFFFFF; border-radius: 36px 36px 0 0; box-sizing: border-box; padding: 64px 34px 100px; display: flex; flex-direction: column; align-items: stretch; gap: 26px; overflow: hidden; opacity: {{ o0 }}; transform: {{ t0 }}; transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1); pointer-events: {{ pe0 }};">
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: -.01em; color: rgba(10,27,42,.5);">What are you building?</span>
+            <span style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(36px, 5vw, 46px); line-height: 1; letter-spacing: -.02em;">a fitness app<span style="display: inline-block; width: 4px; height: .85em; background: #9FE870; margin-left: 6px; vertical-align: -.06em; animation: nsBlink 1.1s ease-in-out infinite;"></span></span>
+            <span style="display: inline-flex; align-items: center; align-self: flex-start; height: 48px; padding: 0 26px; border-radius: 999px; background: #9FE870; font-size: 14px; font-weight: 800;">Find a builder →</span>
+            <span style="font-size: 12px; font-weight: 600; color: rgba(10,27,42,.45);">One clear line · matched 2× faster</span>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF 78%); pointer-events: none;"></span>
+          </div>
+
+          <div class="ns-canvas" style="position: absolute; left: 50%; bottom: -14%; width: min(90%, 470px); height: 102%; background: #FFFFFF; border-radius: 36px 36px 0 0; box-sizing: border-box; padding: 64px 34px 100px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px; overflow: hidden; opacity: {{ o1 }}; transform: {{ t1 }}; transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1); pointer-events: {{ pe1 }};">
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: -.01em; color: rgba(10,27,42,.5);">Finding your person</span>
+            <span style="position: relative; display: flex; align-items: center; margin-top: 8px;"><span style="width: 68px; height: 68px; border-radius: 50%; background: rgba(10,27,42,.07); border: 1px solid rgba(10,27,42,.12); color: #0A1B2A; display: grid; place-items: center; font-size: 13px; font-weight: 800;">YOU</span><span style="width: 78px; height: 78px; border-radius: 50%; background: #0A1B2A; border: 3px solid #9FE870; color: #FFFFFF; display: grid; place-items: center; font-size: 16px; font-weight: 800; margin-left: -18px;">MK</span><span style="position: absolute; right: 0; bottom: 5px; width: 15px; height: 15px; border-radius: 50%; background: #1E7A34; border: 3px solid #FFFFFF;"></span></span>
+            <span style="display: flex; flex-direction: column; gap: 5px;"><span style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 3.6vw, 34px); line-height: 1; letter-spacing: -.02em;">Maya K.</span><span style="font-size: 13px; font-weight: 600; color: rgba(10,27,42,.55);">Product mind · online now</span></span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; align-self: stretch; height: 50px; border-radius: 999px; background: #9FE870; font-size: 14px; font-weight: 800;">Say hi → Start session</span>
+            <span style="font-size: 12px; font-weight: 600; color: rgba(10,27,42,.45);">+19 more builders online</span>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF 78%); pointer-events: none;"></span>
+          </div>
+
+          <div class="ns-canvas" style="position: absolute; left: 50%; bottom: -14%; width: min(90%, 470px); height: 102%; background: #FFFFFF; border-radius: 36px 36px 0 0; box-sizing: border-box; padding: 64px 34px 100px; display: flex; flex-direction: column; align-items: stretch; gap: 26px; overflow: hidden; opacity: {{ o2 }}; transform: {{ t2 }}; transition: opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1); pointer-events: {{ pe2 }};">
+            <span style="display: flex; align-items: center; justify-content: space-between;"><span style="display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; letter-spacing: -.01em;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #C0392B; animation: nsPulse 1.6s ease-in-out infinite;"></span>Live session</span><span style="font-size: 15px; font-weight: 800;">18:42</span></span>
+            <span style="display: flex; flex-direction: column; gap: 7px; border-radius: 20px; background: #F1F4F0; border: 1px solid rgba(10,27,42,.10); padding: 14px;"><span style="display: flex; justify-content: space-between; align-items: center; padding: 0 2px 2px;"><span style="font-size: 11px; font-weight: 700; color: rgba(10,27,42,.5); letter-spacing: -.01em;">Shared editor</span><span style="font-size: 10px; font-weight: 800; color: #0A1B2A; background: #9FE870; border-radius: 6px; padding: 2px 7px;">line 4</span></span><span style="display: flex; align-items: center; gap: 10px;"><span style="width: 12px; font-size: 10px; font-weight: 600; color: rgba(10,27,42,.35);">1</span><span style="height: 8px; width: 42%; border-radius: 4px; background: rgba(10,27,42,.14);"></span></span><span style="display: flex; align-items: center; gap: 10px; background: rgba(123,201,80,.20); border-radius: 8px; padding: 5px 8px;"><span style="width: 12px; font-size: 10px; font-weight: 800; color: #1E7A34;">2</span><span style="height: 8px; width: 62%; border-radius: 4px; background: #5FAE4E;"></span><span style="width: 7px; height: 12px; border-radius: 2px; background: #0A1B2A;"></span></span><span style="display: flex; align-items: center; gap: 10px;"><span style="width: 12px; font-size: 10px; font-weight: 600; color: rgba(10,27,42,.35);">3</span><span style="height: 8px; width: 88%; border-radius: 4px; background: rgba(10,27,42,.14);"></span></span><span style="display: flex; align-items: center; gap: 10px;"><span style="width: 12px; font-size: 10px; font-weight: 600; color: rgba(10,27,42,.35);">4</span><span style="height: 8px; width: 56%; border-radius: 4px; background: rgba(10,27,42,.10);"></span></span></span>
+            <span style="display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; color: rgba(10,27,42,.6);"><span style="width: 7px; height: 7px; border-radius: 50%; background: #7BC950; animation: nsPulse 1.6s ease-in-out infinite;"></span>Maya is editing · line 4</span>
+            <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF 78%); pointer-events: none;"></span>
+          </div>
+
+        </div>
+      </div>
+
+      <div data-reveal="true" style="min-width: 0; container-type: inline-size;">
+        <h2 style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((clamp(28px, 8cqw, 52px)) * var(--ns-scale)); line-height: var(--ns-lh); letter-spacing: -.025em; margin: 0 0 clamp(28px, 3.6vw, 44px);">From alone to building together in under a minute.</h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; align-items: flex-start; gap: 20px; padding: 28px; border: 1px solid rgba(10,27,42,.10); border-radius: 26px; background: #FFFFFF; cursor: pointer; transition: opacity 300ms ease-out, border-color 300ms ease-out; opacity: {{ op0 }};" onClick="{{ seek0 }}" role="button" aria-label="Go to step 1" style-hover="border-color: rgba(10,27,42,.30);">
+          <span style="flex: none; position: relative; width: 52px; height: 52px;">
+            <span style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(10,27,42,.16); display: grid; place-items: center; font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: 700; background: {{ bg0 }}; color: {{ fg0 }}; transition: background 300ms ease-out, color 300ms ease-out;">1</span>
+            <svg viewBox="0 0 52 52" style="position: absolute; inset: 0; width: 52px; height: 52px; transform: rotate(-90deg); pointer-events: none;"><circle data-ring="0" cx="26" cy="26" r="25" fill="none" stroke="#9FE870" stroke-width="3" stroke-linecap="round" stroke-dasharray="157.1" class="ns-ringfg" style="will-change: stroke-dashoffset; transform: translateZ(0); animation: {{ ringA0 }}; animation-play-state: {{ ringP0 }};" stroke-dashoffset="{{ ring0 }}"></circle></svg>
+          </span>
+          <span style="display: flex; flex-direction: column; gap: 8px; min-width: 0; padding-top: 4px;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(18px, 2vw, 21px); font-weight: 700; letter-spacing: -.01em;">Say what you're building</span>
+            <span style="font-size: clamp(14px, 1.5vw, 16px); line-height: 1.65; color: rgba(10,27,42,.62);">One line about your project and what you need beside you.</span>
+          </span>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; padding: 28px; border: 1px solid rgba(10,27,42,.10); border-radius: 26px; background: #FFFFFF; cursor: pointer; transition: opacity 300ms ease-out, border-color 300ms ease-out; opacity: {{ op1 }};" onClick="{{ seek1 }}" role="button" aria-label="Go to step 2" style-hover="border-color: rgba(10,27,42,.30);">
+          <span style="flex: none; position: relative; width: 52px; height: 52px;">
+            <span style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(10,27,42,.16); display: grid; place-items: center; font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: 700; background: {{ bg1 }}; color: {{ fg1 }}; transition: background 300ms ease-out, color 300ms ease-out;">2</span>
+            <svg viewBox="0 0 52 52" style="position: absolute; inset: 0; width: 52px; height: 52px; transform: rotate(-90deg); pointer-events: none;"><circle data-ring="1" cx="26" cy="26" r="25" fill="none" stroke="#9FE870" stroke-width="3" stroke-linecap="round" stroke-dasharray="157.1" class="ns-ringfg" style="will-change: stroke-dashoffset; transform: translateZ(0); animation: {{ ringA1 }}; animation-play-state: {{ ringP1 }};" stroke-dashoffset="{{ ring1 }}"></circle></svg>
+          </span>
+          <span style="display: flex; flex-direction: column; gap: 8px; min-width: 0; padding-top: 4px;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(18px, 2vw, 21px); font-weight: 700; letter-spacing: -.01em;">We find your person</span>
+            <span style="font-size: clamp(14px, 1.5vw, 16px); line-height: 1.65; color: rgba(10,27,42,.62);">Matched in seconds with a builder who's online right now.</span>
+          </span>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 20px; padding: 28px; border: 1px solid rgba(10,27,42,.10); border-radius: 26px; background: #FFFFFF; cursor: pointer; transition: opacity 300ms ease-out, border-color 300ms ease-out; opacity: {{ op2 }};" onClick="{{ seek2 }}" role="button" aria-label="Go to step 3" style-hover="border-color: rgba(10,27,42,.30);">
+          <span style="flex: none; position: relative; width: 52px; height: 52px;">
+            <span style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(10,27,42,.16); display: grid; place-items: center; font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: 700; background: {{ bg2 }}; color: {{ fg2 }}; transition: background 300ms ease-out, color 300ms ease-out;">3</span>
+            <svg viewBox="0 0 52 52" style="position: absolute; inset: 0; width: 52px; height: 52px; transform: rotate(-90deg); pointer-events: none;"><circle data-ring="2" cx="26" cy="26" r="25" fill="none" stroke="#9FE870" stroke-width="3" stroke-linecap="round" stroke-dasharray="157.1" class="ns-ringfg" style="will-change: stroke-dashoffset; transform: translateZ(0); animation: {{ ringA2 }}; animation-play-state: {{ ringP2 }};" stroke-dashoffset="{{ ring2 }}"></circle></svg>
+          </span>
+          <span style="display: flex; flex-direction: column; gap: 8px; min-width: 0; padding-top: 4px;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(18px, 2vw, 21px); font-weight: 700; letter-spacing: -.01em;">Build for 25 minutes</span>
+            <span style="font-size: clamp(14px, 1.5vw, 16px); line-height: 1.65; color: rgba(10,27,42,.62);">Audio, screen share, shared editor. Then back to your thing.</span>
+            <span style="font-size: clamp(13px, 1.3vw, 14px); line-height: 1.5; color: rgba(10,27,42,.55);">Then rate it — a mutual yes saves them to your people.</span>
+          </span>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="how" style="background: #9FE870; color: #0A1B2A; padding: 80px clamp(16px, 2.4vw, 28px);">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;">
+
+      <div data-reveal="true" style="min-width: 0; container-type: inline-size;">
+        <h2 style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((clamp(30px, 9cqw, 54px)) * var(--ns-scale)); line-height: var(--ns-lh); letter-spacing: -.025em; margin: 0 0 18px;">No calendars. Ever.</h2>
+        <p style="max-width: 430px; margin: 0 0 clamp(28px, 4vw, 40px); font-size: clamp(16px, 1.8vw, 20px); line-height: 1.5; color: #0A1B2A;">Nothing to schedule, no profile to polish, no waiting for Thursday. The whole setup is two dropdowns.</p>
+        <a href="#cta" style="display: inline-flex; align-items: center; height: clamp(46px, 3.8vw, 54px); padding: 0 clamp(22px, 2.2vw, 30px); border-radius: 999px; background: #0A1B2A; color: #FFFFFF; font-size: clamp(15px, 1.4vw, 16px); font-weight: 600; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.04); box-shadow: 0 16px 38px rgba(10,27,42,.28); opacity: 1;">See how it works</a>
+      </div>
+
+      <div data-reveal="true" style="min-width: 0; container-type: inline-size;">
+        <div style="background: #FFFFFF; color: #0A1B2A; max-width: 430px; margin: 0 auto; border-radius: clamp(26px, 8cqw, 44px); padding: clamp(22px, 5cqw, 34px) clamp(20px, 4.4cqw, 30px); display: flex; flex-direction: column; gap: clamp(22px, 5cqw, 34px);">
+
+          <div style="display: flex; justify-content: flex-end;">
+            <span style="display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px 0 14px; border-radius: 999px; background: rgba(10,27,42,.06); font-size: 14px; font-weight: 700; white-space: nowrap;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #0A1B2A; animation: nsPulse 1.6s ease-in-out infinite;"></span>
+              <span style="width: 1px; height: 18px; background: rgba(10,27,42,.18);"></span>
+              23 builders online<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="rgba(10,27,42,.5)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg>
+            </span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 15px; color: rgba(10,27,42,.6);">You're building</span>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 14px;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; height: 44px; padding: 0 14px 0 8px; border-radius: 999px; background: rgba(10,27,42,.06); font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <span style="width: 28px; height: 28px; border-radius: 50%; background: #0A1B2A; color: #FFFFFF; display: grid; place-items: center; font-size: 12px; font-weight: 700;">APP</span>
+                your project<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#0A1B2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+              </span>
+              <span style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 6cqw, 48px); line-height: 1; letter-spacing: -.02em; white-space: nowrap;">25 min</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: rgba(159,232,112,.45); font-size: 14px; line-height: 1.45;">
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z" /></svg>
+            <span>Building for over an hour? <span style="font-weight: 700; border-bottom: 1px solid rgba(10,27,42,.4);">We widen the match</span></span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-size: 15px; color: rgba(10,27,42,.6);">You want</span>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 14px;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; height: 44px; padding: 0 14px 0 8px; border-radius: 999px; background: rgba(10,27,42,.06); font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <span style="width: 28px; height: 28px; border-radius: 50%; background: #0A1B2A; color: #FFFFFF; display: grid; place-items: center; font-size: 12px; font-weight: 700;">PM</span>
+                a second brain<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#0A1B2A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+              </span>
+              <span style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 6cqw, 48px); line-height: 1; letter-spacing: -.02em; white-space: nowrap;">1 human</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 24px; border-top: 1px solid rgba(10,27,42,.14); padding-top: clamp(20px, 4cqw, 28px);">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(10,27,42,.16); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
+              <span style="display: flex; flex-direction: column; gap: 1px; min-width: 0;">
+                <span style="font-size: 13px; color: rgba(10,27,42,.6);">Matched</span>
+                <span style="font-size: 15px; font-weight: 700;">in about 40 seconds</span>
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <span style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(10,27,42,.16); display: grid; place-items: center;"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#0A1B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" /><path d="M9 8h6" /><path d="M9 12h6" /></svg></span>
+              <span style="display: flex; flex-direction: column; gap: 1px; min-width: 0;">
+                <span style="font-size: 13px; color: rgba(10,27,42,.6);">Session length</span>
+                <span style="font-size: 15px; font-weight: 700;">25 minutes, then it ends</span>
+              </span>
+              <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 700; border-bottom: 1px solid rgba(10,27,42,.3);">No calendar</span>
+            </div>
+          </div>
+
+          <a href="#cta" style="display: inline-flex; align-items: center; justify-content: center; height: clamp(50px, 5cqw, 60px); border-radius: 999px; background: #9FE870; color: #0A1B2A; font-size: 16px; font-weight: 700; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.02); box-shadow: 0 14px 32px rgba(10,27,42,.2); opacity: 1;">Start a session</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  
+
+  <section style="background: #FFFFFF; color: #0A1B2A; padding: clamp(180px, 20vw, 240px) clamp(16px, 2.4vw, 28px) clamp(160px, 18vw, 220px);">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <span data-reveal="true" style="display: inline-block; margin: 0 0 clamp(18px, 2.2vw, 26px); padding: 6px 12px; border-radius: 6px; background: #9FE870; font-size: 14px; font-weight: 700; letter-spacing: -.01em;">After every session</span>
+      <h2 data-reveal="true" style="max-width: 860px; margin: 0 auto clamp(20px, 2.4vw, 28px); font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 5.4vw, 64px); line-height: 1.02; letter-spacing: -.03em; color: #0A1B2A;">Great match? Keep them.</h2>
+      <p data-reveal="true" style="max-width: 600px; margin: 0; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.55; color: rgba(10,27,42,.7);">Both of you answer one question: build together again? Two yeses and they’re saved to your people — one tap into your next session.</p>
+      <p data-reveal="true" style="max-width: 600px; margin: 20px 0 0; font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; letter-spacing: -.01em; color: #0A1B2A;">Strangers tonight. Your team by Friday.</p>
+    </div>
+  </section>
+
+  <section id="people" style="background: #FFFFFF; padding: 64px 0; overflow: hidden; position: relative;">
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(36px, 5vw, 72px); align-items: center; padding-left: max(clamp(16px, 2.4vw, 28px), calc((100vw - 1240px) / 2));">
+
+      <div data-reveal="true" style="flex: 1 1 300px; max-width: 480px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+        <h2 style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(38px, 4.4vw, 68px); line-height: 1; letter-spacing: -.025em; margin: 0;">Shipped together.</h2>
+        <p style="margin: 0; max-width: 380px; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; color: rgba(10,27,42,.65);">The kinds of sessions that happen here every night.</p>
+        <div style="display: flex; gap: 14px; margin-top: 10px;">
+          <button type="button" onClick="{{ qPrev }}" aria-label="Previous story" style="width: 83px; height: 83px; border-radius: 50%; border: 0; background: rgba(10,27,42,.08); color: #0A1B2A; display: grid; place-items: center; cursor: pointer; transition: transform 250ms ease-out;" style-hover="transform: scale(1.06);"><svg viewBox="0 0 24 24" width="70" height="70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg></button>
+          <button type="button" onClick="{{ qNext }}" aria-label="Next story" style="width: 83px; height: 83px; border-radius: 50%; border: 0; background: #9FE870; color: #0A1B2A; display: grid; place-items: center; cursor: pointer; transition: transform 250ms ease-out;" style-hover="transform: scale(1.06);"><svg viewBox="0 0 24 24" width="70" height="70" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+        </div>
+      </div>
+
+      <div data-carcol="true" style="flex: 1.6 1 440px; min-width: 0; overflow: hidden; position: relative;">
+        <span data-qfade="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 230px; z-index: 3; pointer-events: none; opacity: 0; transition: opacity 300ms ease-out; background: linear-gradient(to right, #FFFFFF 0%, rgba(255,255,255,.92) 35%, rgba(255,255,255,0) 100%);"></span>
+        <div data-quotes="true" class="ns-quotes" tabindex="0" aria-label="Builder stories carousel. Use left and right arrow keys to browse." onKeyDown="{{ qKeys }}" style="display: flex; gap: 20px; position: relative; overflow: visible; padding: 8px 0 24px; touch-action: pan-y; cursor: grab; will-change: transform; transition: transform 650ms cubic-bezier(0.22,1,0.36,1);">
+
+          <div data-quote="0" style="flex: 0 0 min(330px, 62%); scroll-snap-align: center; border-radius: 34px; background: #CDF39B; padding: 32px 30px; display: flex; flex-direction: column; gap: 20px; min-height: 460px; box-sizing: border-box; transition: opacity 500ms ease-out, transform 600ms cubic-bezier(0.22,1,0.36,1);">
+            <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; font-weight: 600; color: #0A1B2A;">2:14 AM. An auth bug that survived three days of ChatGPT. A stranger read the stack trace out loud — and went ‘wait, line 40.’ Session over in eleven minutes. Nobody said goodbye. Both went back to building.</p>
+          </div>
+
+          <div data-quote="1" style="flex: 0 0 min(330px, 62%); scroll-snap-align: center; border-radius: 34px; background: #D9ECE8; padding: 32px 30px; display: flex; flex-direction: column; gap: 20px; min-height: 460px; box-sizing: border-box; transition: opacity 500ms ease-out, transform 600ms cubic-bezier(0.22,1,0.36,1);">
+            <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; font-weight: 600; color: #0A1B2A;">He’d pitched his idea to his mom, his roommate, and a mirror. First time he said it to another builder, she asked one question: ‘who pays?’ He rebuilt the whole plan that night — and thanked her for ruining it.</p>
+          </div>
+
+          <div data-quote="2" style="flex: 0 0 min(330px, 62%); scroll-snap-align: center; border-radius: 34px; background: #F2F3F0; padding: 32px 30px; display: flex; flex-direction: column; gap: 20px; min-height: 460px; box-sizing: border-box; transition: opacity 500ms ease-out, transform 600ms cubic-bezier(0.22,1,0.36,1);">
+            <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; font-weight: 600; color: #0A1B2A;">A designer shared her screen and said ‘be honest.’ He was. Twenty minutes later they’d rebuilt the onboarding together, live, arguing about button copy like they’d worked together for years. They’d met at minute zero.</p>
+          </div>
+
+          <div data-quote="3" style="flex: 0 0 min(330px, 62%); scroll-snap-align: center; border-radius: 34px; background: #F5E6B8; padding: 32px 30px; display: flex; flex-direction: column; gap: 20px; min-height: 460px; box-sizing: border-box; transition: opacity 500ms ease-out, transform 600ms cubic-bezier(0.22,1,0.36,1);">
+            <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; font-weight: 600; color: #0A1B2A;">Neither of them spoke for twenty minutes. Two mics on, two different projects, the sound of typing. At 23:40 one said ‘still stuck?’ — ‘nope, shipped it.’ That was the whole conversation. Both came back the next night.</p>
+          </div>
+
+          <div data-quote="4" style="flex: 0 0 min(330px, 62%); scroll-snap-align: center; border-radius: 34px; background: #FFFFFF; border: 1px solid rgba(10,27,42,.14); padding: 32px 30px; display: flex; flex-direction: column; gap: 20px; min-height: 460px; box-sizing: border-box; transition: opacity 500ms ease-out, transform 600ms cubic-bezier(0.22,1,0.36,1);">
+            <p style="margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; font-weight: 600; color: #0A1B2A;">A vibe coder with 400 lines of AI-generated chaos met a backend dev who’s seen worse. ‘Delete these 360, keep these 40.’ The app ran. She stared at it running for a solid minute.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; right: 0; width: 320px; z-index: 3; pointer-events: none; background: linear-gradient(to left, #FFFFFF 0%, #FFFFFF 35%, rgba(255,255,255,0) 100%);"></span>
+  </section>
+
+  
+
+  <section style="position: relative; background: #F6D973; color: #0A1B2A; padding: 110px clamp(16px, 2.4vw, 28px) 150px; overflow: hidden;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(20px, 2.6vw, 30px);">
+      <span data-reveal="true" style="display: inline-flex; align-items: center; height: 34px; padding: 0 18px; border-radius: 8px; background: #0A1B2A; color: #F6D973; font-size: 14px; font-weight: 700;">Someone&apos;s always online.</span>
+      <h2 data-reveal="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(34px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -.02em; margin: 0; max-width: 20ch;">Get the help you need to ship tonight</h2>
+      <p data-reveal="true" style="margin: 0; max-width: 620px; font-size: clamp(16px, 1.8vw, 21px); line-height: 1.6;">From <a href="#how" style="text-decoration: underline; text-underline-offset: 3px;">debugging</a> and <a href="#how" style="text-decoration: underline; text-underline-offset: 3px;">design reviews</a> to <a href="#how" style="text-decoration: underline; text-underline-offset: 3px;">product feedback</a> and late-night motivation. Whenever you&apos;re stuck, someone is here.</p>
+      <p data-reveal="true" style="margin: 0; font-size: 15px;">Still have questions? <a href="#how" style="font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">Learn more about how 2AM works.</a></p>
+    </div>
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: -1px; width: 100%; height: 90px; display: block;"><path d="M0 0 C 420 90 1020 90 1440 0 L1440 90 L0 90 Z" fill="#FFFFFF"></path></svg>
+  </section>
+
+  
+
+  <section id="cta" style="background: #FFFFFF; color: #0A1B2A; padding: 80px clamp(16px, 2.4vw, 28px);">
+    <div style="max-width: 1240px; margin: 0 auto; container-type: inline-size; display: flex; flex-direction: column; align-items: flex-start; gap: 40px;">
+      <h2 data-reveal="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((clamp(34px, 7cqw, 104px)) * var(--ns-scale)); line-height: var(--ns-lh); letter-spacing: -.01em; margin: 0;">Tonight’s builders are already online.</h2>
+      <a href="#top" style="display: inline-flex; align-items: center; height: clamp(44px, 3.8vw, 52px); padding: 0 clamp(20px, 2.2vw, 28px); border-radius: 999px; background: #9FE870; color: #0A1B2A; font-size: clamp(15px, 1.4vw, 16px); font-weight: 600; transition: transform 250ms ease-out, box-shadow 250ms ease-out;" style-hover="transform: scale(1.04); box-shadow: 0 16px 38px rgba(10,27,42,.2); opacity: 1;">Find a builder</a>
+    </div>
+  </section>
+
+  <footer style="background: #FFFFFF; color: #0A1B2A; padding: 80px clamp(16px, 2.4vw, 28px) 32px;">
+    <div style="max-width: 1240px; margin: 0 auto; container-type: inline-size;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: clamp(28px, 4vw, 40px); padding-bottom: clamp(40px, 6vw, 64px); border-bottom: 1px solid rgba(10,27,42,.14);">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Product</span>
+          <a href="#how" style="font-size: 15px;">How it works</a><a href="#session" style="font-size: 15px;">The session</a><a href="#people" style="font-size: 15px;">Who you'll meet</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Company</span>
+          <a href="#top" style="font-size: 15px;">About</a><a href="#top" style="font-size: 15px;">Contact</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Safety</span>
+          <a href="#top" style="font-size: 15px;">Safety</a><a href="#top" style="font-size: 15px;">Report a session</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Legal</span>
+          <a href="#top" style="font-size: 15px;">Terms</a><a href="#top" style="font-size: 15px;">Privacy</a><a href="#top" style="font-size: 15px;">Recording policy</a>
+        </div>
+      </div>
+      <div style="padding: 56px 0 28px;">
+        <div data-fitmark="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((120px) * var(--ns-scale)); line-height: .9; letter-spacing: -.01em; text-transform: uppercase; white-space: nowrap;">2AM<span style="color: #9FE870;">.</span></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 13px; color: rgba(10,27,42,.6); border-top: 1px solid rgba(10,27,42,.14); padding-top: 22px;">
+        <span>© 2026 2AM Labs. Built by people who were also alone at 1am.</span>
+        <span>Sessions are never recorded.</span>
+        <span>Free while we're young.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;displayFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Geologica&quot;,&quot;Gilda Display&quot;,&quot;Rot (Gotico-Antiqua)&quot;,&quot;Dela Gothic One&quot;,&quot;Cal Sans&quot;,&quot;Boldonse&quot;,&quot;Basteleur&quot;,&quot;Paperlogy&quot;,&quot;Wanted Sans&quot;,&quot;Ojuju&quot;,&quot;Jost (Google Sans-like)&quot;,&quot;Poppins&quot;,&quot;Figtree (Lufga-like)&quot;,&quot;Questrial&quot;,&quot;Funnel Display&quot;,&quot;Bricolage Grotesque&quot;,&quot;Syne&quot;,&quot;Archivo Black&quot;,&quot;Anton&quot;],&quot;default&quot;:&quot;Geologica&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Type&quot;},&quot;buildersOnline&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:23,&quot;min&quot;:1,&quot;max&quot;:400,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Live matching&quot;},&quot;showQueue&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Live matching&quot;},&quot;tickerSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:44,&quot;min&quot;:10,&quot;max&quot;:60,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  applyDisplayFont() {
+    const stacks = {
+      'Geologica': "Geologica, 'Gilda Display', Impact, sans-serif",
+      'Gilda Display': "'Gilda Display', Rot, Georgia, serif",
+      'Rot (Gotico-Antiqua)': "Rot, 'Dela Gothic One', Georgia, serif",
+      'Dela Gothic One': "'Dela Gothic One', 'Cal Sans', Impact, sans-serif",
+      'Cal Sans': "'Cal Sans', Boldonse, Impact, sans-serif",
+      'Boldonse': "Boldonse, Basteleur, Impact, sans-serif",
+      'Basteleur': "Basteleur, Paperlogy, Georgia, serif",
+      'Paperlogy': "Paperlogy, 'Wanted Sans Variable', Jost, Impact, sans-serif",
+      'Wanted Sans': "'Wanted Sans Variable', 'Wanted Sans', Jost, Impact, sans-serif",
+      'Ojuju': "Ojuju, Jost, Impact, sans-serif",
+      'Jost (Google Sans-like)': "Jost, Figtree, Impact, sans-serif",
+      'Poppins': "Poppins, Figtree, Impact, sans-serif",
+      'Figtree (Lufga-like)': "Figtree, Questrial, Impact, sans-serif",
+      'Questrial': "Questrial, 'Funnel Display', Impact, sans-serif",
+      'Funnel Display': "'Funnel Display', Impact, sans-serif",
+      'Bricolage Grotesque': "'Bricolage Grotesque', Impact, sans-serif",
+      'Syne': "Syne, Impact, sans-serif",
+      'Archivo Black': "'Archivo Black', Impact, sans-serif",
+      'Anton': "Anton, Impact, sans-serif"
+    };
+    // [lh, optical size multiplier] — Boldonse draws caps at 1.20em vs ~0.70em for normal faces
+    const metrics = {
+      'Geologica': ['1.02', '1', '700'], 'Gilda Display': ['1.08', '1.1', '400'], 'Rot (Gotico-Antiqua)': ['1.05', '1.12', '400'], 'Dela Gothic One': ['1.12', '.92', '400'], 'Cal Sans': ['1.04', '1', '400'], 'Boldonse': ['1.3', '.58', '400'], 'Basteleur': ['1.1', '1'], 'Paperlogy': ['1.04', '1'],
+      'Wanted Sans': ['1.02', '1'], 'Ojuju': ['1.06', '1'], 'Jost (Google Sans-like)': ['1.02', '1'],
+      'Poppins': ['1.06', '1'], 'Figtree (Lufga-like)': ['1.02', '1'], 'Questrial': ['1.04', '1'],
+      'Funnel Display': ['1.02', '1'], 'Bricolage Grotesque': ['1.04', '1'], 'Syne': ['1.06', '1'],
+      'Archivo Black': ['1.04', '1'], 'Anton': ['1.0', '1']
+    };
+    const name = stacks[this.props.displayFont] ? this.props.displayFont : 'Geologica';
+    const pick = stacks[name];
+    document.documentElement.style.setProperty('--ns-display', pick);
+    const m = metrics[name] || ['1.16', '1'];
+    document.documentElement.style.setProperty('--ns-lh', m[0]);
+    document.documentElement.style.setProperty('--ns-scale', m[1]);
+    document.documentElement.style.setProperty('--ns-weight', m[2] || '900');
+    const fit = this.fitMarkFn;
+    if (fit) { if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); requestAnimationFrame(fit); }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps || prevProps.displayFont !== this.props.displayFont) this.applyDisplayFont();
+  }
+
+  componentWillUnmount() {
+    this.stepDead = true;
+    if (this.stepRaf) cancelAnimationFrame(this.stepRaf);
+    this.stepRaf = 0;
+    if (this.stepWatch) clearInterval(this.stepWatch);
+    this.stepWatch = 0;
+    if (this.quotesAuto) clearInterval(this.quotesAuto);
+    this.quotesAuto = 0;
+    if (this.stepIo) { try { this.stepIo.disconnect(); } catch (e) {} this.stepIo = null; }
+  }
+
+  componentDidMount() {
+    this.applyDisplayFont();
+    this.startStepper();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const ticker = document.querySelector('.ns-mq-track');
+    if (ticker && this.props.tickerSeconds) ticker.style.animationDuration = this.props.tickerSeconds + 's';
+
+    const fitMark = () => {
+      const el = document.querySelector('[data-fitmark]');
+      if (el && el.parentElement && el.parentElement.clientWidth) {
+        const avail = el.parentElement.clientWidth;
+        el.style.display = 'inline-block';
+        el.style.fontSize = '100px';
+        const w = el.getBoundingClientRect().width;
+        if (w) el.style.fontSize = (100 * (avail / w)).toFixed(1) + 'px';
+      }
+      document.querySelectorAll('[data-fit]').forEach((h) => {
+        const box = h.parentElement;
+        if (!box || !box.clientWidth) return;
+        const own = h.clientWidth || Infinity;
+        const avail = Math.min(own, box.clientWidth) - 2;
+        h.style.fontSize = '100px';
+        let widest = 0;
+        const range = document.createRange();
+        h.querySelectorAll('[data-fit-line]').forEach((l) => {
+          range.selectNodeContents(l);
+          widest = Math.max(widest, range.getBoundingClientRect().width, l.scrollWidth && 0);
+        });
+        if (!widest) return;
+        const max = parseFloat(h.getAttribute('data-fit-max')) || 120;
+        const ratio = parseFloat(h.getAttribute('data-fit-ratio')) || 1;
+        h.style.fontSize = Math.max(24, Math.min(max, 100 * (avail * ratio / widest))).toFixed(1) + 'px';
+      });
+    };
+    this.fitMarkFn = fitMark;
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMark);
+    fitMark();
+    window.addEventListener('resize', fitMark);
+    if (window.ResizeObserver) { const ro = new ResizeObserver(fitMark); ro.observe(document.documentElement); }
+
+    if (reduce) return;
+
+    const countUp = (el) => {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
+      const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      const t0 = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - t0) / 900);
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = String(target);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
+    reveals.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 250ms ease-out, transform 250ms ease-out';
+      el.style.transitionDelay = (i % 4) * 50 + 'ms';
+      el.style.willChange = 'opacity, transform';
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        Array.from(e.target.querySelectorAll('[data-count]')).forEach(countUp);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach((el) => io.observe(el));
+
+    const track = document.querySelector('[data-quotes]');
+    if (track && !track.__nsInit) {
+      track.__nsInit = true;
+      const cards = () => Array.from(track.querySelectorAll('[data-quote]'));
+      const step = () => ((track.children[0] && track.children[0].offsetWidth) || 300) + 20;
+      let pos = 0;
+      const centerX = (ai) => {
+        const list = cards();
+        const el = list[ai];
+        if (!el) return 0;
+        return Math.min(0, -(el.offsetLeft - Math.max(0, (track.clientWidth - el.offsetWidth) / 2)));
+      };
+      const markActive = (ai) => {
+        cards().forEach((c) => {
+          c.style.opacity = '1';
+          c.style.transform = 'scale(1)';
+        });
+      };
+      const fadeTo = (v) => {
+        const fz = track.parentElement ? track.parentElement.querySelector('[data-qfade]') : null;
+        if (fz) fz.style.opacity = v;
+      };
+      const goTo = (ai) => {
+        const n = cards().length;
+        if (!n) return;
+        ai = Math.max(0, Math.min(n - 1, ai));
+        track.__qi = ai;
+        pos = centerX(ai);
+        track.style.transform = 'translateX(' + pos + 'px)';
+        markActive(ai);
+        fadeTo(ai > 0 ? '1' : '0');
+        selfQ.quotesIdle = performance.now();
+      };
+      const selfQ = this;
+      selfQ.quotesGo = goTo;
+      const nearestAt = (x) => {
+        const c = -x + track.clientWidth / 2;
+        const list = cards();
+        let best = 0, bd = 1e12;
+        list.forEach((cc, idx) => {
+          const ccx = cc.offsetLeft + cc.offsetWidth / 2;
+          const dd = Math.abs(ccx - c);
+          if (dd < bd) { bd = dd; best = idx; }
+        });
+        return best;
+      };
+      let dragX = 0, dragBase = 0, dragging = false;
+      track.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        dragX = e.clientX;
+        dragBase = pos;
+        track.style.transition = 'none';
+        try { track.setPointerCapture(e.pointerId); } catch (err) {}
+      });
+      track.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const n = cards().length;
+        const lo = n ? centerX(n - 1) - 60 : -60;
+        const x = Math.max(lo, Math.min(60, dragBase + (e.clientX - dragX)));
+        pos = x;
+        track.style.transform = 'translateX(' + x + 'px)';
+        markActive(nearestAt(x));
+        fadeTo(Math.min(1, Math.max(0, -x / 120)).toFixed(2));
+      });
+      const endDrag = (e) => {
+        if (!dragging) return;
+        dragging = false;
+        track.style.transition = '';
+        const dx = e.clientX - dragX;
+        let ai = (typeof track.__qi === 'number') ? track.__qi : nearestAt(pos);
+        if (dx < -40) ai += 1;
+        else if (dx > 40) ai -= 1;
+        else ai = nearestAt(pos);
+        goTo(ai);
+      };
+      track.addEventListener('pointerup', endDrag);
+      track.addEventListener('pointercancel', endDrag);
+      let rzRaf = 0;
+      window.addEventListener('resize', () => {
+        if (rzRaf) return;
+        rzRaf = requestAnimationFrame(() => {
+          rzRaf = 0;
+          const ai = (typeof track.__qi === 'number') ? track.__qi : 0;
+          pos = centerX(ai);
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(' + pos + 'px)';
+          void track.offsetWidth;
+          track.style.transition = '';
+        });
+      });
+      pos = 0;
+      track.style.transform = 'translateX(0px)';
+      markActive(0);
+    }
+  }
+
+  startStepper() {
+    if (this.stepRaf) cancelAnimationFrame(this.stepRaf);
+    if (this.stepWatch) clearInterval(this.stepWatch);
+    if (this.stepIo) { try { this.stepIo.disconnect(); } catch (e) {} this.stepIo = null; }
+    this.stepDead = false;
+    this.stepGen = (this.stepGen || 0) + 1;
+    const self = this;
+    const gen = this.stepGen;
+    const alive = () => !self.stepDead && self.stepGen === gen;
+    const pickWrap = () => {
+      const all = Array.from(document.querySelectorAll('[data-stepper]')).filter((e) => e.isConnected);
+      if (!all.length) return null;
+      all.sort((a, b) => b.getBoundingClientRect().width - a.getBoundingClientRect().width);
+      return all[0];
+    };
+    let wrap = document.querySelector('[data-stepper]');
+    if (!wrap) return;
+    self.stepDur = 4000;
+    const C = 157.1;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { this.setState({ stepReduced: true }); return; }
+    self.stepVisible = true;
+    let idx = self.state.stepIndex || 0;
+    let acc = 0;
+    let last = performance.now();
+    let lastTick = last;
+    const setRingPlay = (s) => {
+      const w = (wrap && wrap.isConnected) ? wrap : pickWrap();
+      if (!w) return;
+      w.querySelectorAll('[data-ring]').forEach((el) => { el.style.animationPlayState = s; });
+    };
+    self.setRingPlay = setRingPlay;
+    self.stepSeek = (n) => {
+      idx = n;
+      acc = 0;
+      const w = (wrap && wrap.isConnected) ? wrap : pickWrap();
+      if (w) w.querySelectorAll('[data-ring]').forEach((el) => {
+        if (parseInt(el.getAttribute('data-ring'), 10) !== n) return;
+        el.style.animation = 'none';
+        void el.offsetWidth;
+        el.style.animation = 'nsRingFill ' + self.stepDur + 'ms linear forwards';
+        el.style.animationPlayState = (self.state.stepPlaying !== false ? 'running' : 'paused');
+      });
+      self.setState({ stepIndex: n });
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        last = performance.now();
+        if (self.state.stepPlaying !== false) setRingPlay(e.isIntersecting ? 'running' : 'paused');
+      });
+    }, { threshold: 0.1 });
+    io.observe(wrap);
+    self.stepIo = io;
+    const paint = () => {
+      const w = (wrap && wrap.isConnected) ? wrap : pickWrap();
+      if (!w) return;
+      const p = Math.min(1, acc / self.stepDur);
+      w.querySelectorAll('[data-ring]').forEach((el) => {
+        const n = parseInt(el.getAttribute('data-ring'), 10);
+        let off = C;
+        if (n === idx) off = C * (1 - p);
+        else if (idx === 1 && n === 0) off = 0;
+        else if (idx === 2 && (n === 0 || n === 1)) off = 0;
+        el.setAttribute('stroke-dashoffset', String(off));
+      });
+    };
+    const advance = (dt) => {
+      acc += dt;
+      if (acc >= self.stepDur) {
+        let jumps = 0;
+        while (acc >= self.stepDur && jumps < 3) { acc -= self.stepDur; idx = (idx + 1) % 3; jumps++; }
+        self.setState({ stepIndex: idx });
+      }
+      paint();
+    };
+    const tick = (now) => {
+      if (!alive()) return;
+      lastTick = now;
+      if (!wrap || !wrap.isConnected) {
+        wrap = pickWrap();
+        if (wrap && self.stepIo) { try { self.stepIo.disconnect(); } catch (e) {} self.stepIo.observe(wrap); }
+        last = now;
+      }
+      let dt = now - last;
+      last = now;
+      if (!(dt >= 0)) dt = 0;
+      if (dt > 250) dt = 250;
+      if (wrap && self.state.stepPlaying !== false) advance(dt);
+      self.stepRaf = requestAnimationFrame(tick);
+    };
+    self.stepRaf = requestAnimationFrame(tick);
+    let fbLast = performance.now();
+    let progMark = -1;
+    let progTime = performance.now();
+    self.stepWatch = setInterval(() => {
+      if (!alive()) { clearInterval(self.stepWatch); return; }
+      if (document.hidden) return;
+      const now = performance.now();
+      if (now - lastTick > 1200) {
+        let dt = now - fbLast;
+        fbLast = now;
+        if (!(dt >= 0)) dt = 0;
+        if (dt > 1500) dt = 1500;
+        if (wrap && self.state.stepPlaying !== false) advance(dt);
+      } else { fbLast = now; }
+      const progNow = idx * 1000000 + Math.floor(acc);
+      if (progNow !== progMark) { progMark = progNow; progTime = now; }
+      else if (self.state.stepPlaying !== false && now - progTime > 8000) self.startStepper();
+    }, 1000);
+  }
+
+  stepperVals() {
+    const C = 157.1;
+    const dur = this.stepDur || 4000;
+    const reduced = !!this.state.stepReduced;
+    const playing = this.state.stepPlaying !== false;
+    const i = this.state.stepIndex || 0;
+    const bgs = ['#F5E6B8', '#CDE6E3', '#E3DBF0'];
+    const self = this;
+    const seek = (n) => { if (self.stepSeek) self.stepSeek(n); else self.setState({ stepIndex: n }); };
+    const out = {
+      cardBg: reduced ? bgs[0] : bgs[i],
+      playIcon: reduced ? '→' : (playing ? '❚❚' : '▶'),
+      seek0: () => seek(0),
+      seek1: () => seek(1),
+      seek2: () => seek(2),
+      toggle: () => {
+        if (self.state.stepReduced) { self.setState({ stepIndex: ((self.state.stepIndex || 0) + 1) % 3 }); return; }
+        self.setState({ stepPlaying: !playing });
+        if (self.setRingPlay) self.setRingPlay(!playing ? 'running' : 'paused');
+      },
+      hoverOn: () => {},
+      hoverOff: () => {}
+    };
+    for (let n = 0; n < 3; n++) {
+      const active = reduced ? true : n === i;
+      const isActive = !reduced && n === i;
+      let done = false;
+      if (!reduced) {
+        if (i === 1 && n === 0) done = true;
+        if (i === 2 && (n === 0 || n === 1)) done = true;
+      }
+      const vis = reduced ? n === 0 : n === i;
+      out['op' + n] = active ? 1 : 0.45;
+      out['bg' + n] = active && !reduced ? '#0A1B2A' : 'transparent';
+      out['fg' + n] = active && !reduced ? '#FFFFFF' : '#0A1B2A';
+      out['ring' + n] = String(C * (1 - (reduced ? 1 : done ? 1 : 0)));
+      out['ringA' + n] = isActive ? ('nsRingFill ' + dur + 'ms linear forwards') : 'none';
+      out['ringP' + n] = (isActive && playing) ? 'running' : 'paused';
+      out['o' + n] = vis ? 1 : 0;
+      out['t' + n] = vis ? 'translate3d(-50%, 0, 0)' : 'translate3d(-50%, 24px, 0)';
+      out['pe' + n] = vis ? 'auto' : 'none';
+    }
+    return out;
+  }
+
+  renderVals() {
+    const online = this.props.buildersOnline ?? 23;
+    const qTrack = (e) => {
+      if (e && e.currentTarget && e.currentTarget.closest) {
+        const sec = e.currentTarget.closest('section');
+        if (sec) {
+          const scoped = sec.querySelector('[data-quotes]');
+          if (scoped) return scoped;
+        }
+      }
+      return document.querySelector('[data-quotes]');
+    };
+    const self = this;
+    const qGo = (dir, e) => {
+      const t = qTrack(e);
+      if (!t || !t.children.length || !self.quotesGo) return;
+      const n = t.children.length;
+      let i = (typeof t.__qi === 'number') ? t.__qi : 0;
+      i += dir;
+      if (i >= n) i = 0;
+      if (i < 0) i = n - 1;
+      self.quotesGo(i);
+    };
+    const out = {
+      buildersOnline: online,
+      queueMore: Math.max(0, online - 4),
+      showQueue: this.props.showQueue ?? true,
+      hideImg: (e) => { e.currentTarget.style.display = 'none'; },
+      qPrev: (e) => qGo(-1, e),
+      qNext: (e) => qGo(1, e),
+      qKeys: (e) => {
+        if (!e) return;
+        if (e.key === 'ArrowRight') qGo(1, e);
+        else if (e.key === 'ArrowLeft') qGo(-1, e);
+      },
+      ...this.stepperVals()
+    };
+    return out;
+  }
+}
+</script>
+</body>
+</html>
