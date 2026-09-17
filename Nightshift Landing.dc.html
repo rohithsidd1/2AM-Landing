@@ -24,6 +24,9 @@
   @media (max-width: 760px) {
     [data-wiseband] { grid-template-columns: 1fr !important; row-gap: 20px !important; }
   }
+  @media (max-width: 900px) {
+    [data-faq] { grid-template-columns: 1fr !important; row-gap: 40px !important; }
+  }
   @media (max-width: 860px) {
     [data-stats] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important; }
   }
@@ -314,7 +317,7 @@
       <span data-reveal="true" style="display: inline-flex; align-items: center; height: 34px; padding: 0 18px; border-radius: 8px; background: #0A1B2A; color: #F6D973; font-size: 14px; font-weight: 700;">Someone&apos;s always online.</span>
       <h2 data-reveal="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(34px, 5.2vw, 72px); line-height: 1.02; letter-spacing: -.02em; margin: 0; max-width: 20ch;">Whatever you're stuck on, someone here isn't.</h2>
       <p data-reveal="true" style="margin: 0; max-width: 620px; font-size: clamp(16px, 1.8vw, 21px); line-height: 1.6;"><strong style="font-weight: 700;">Debugging</strong> at midnight, a <strong style="font-weight: 700;">design</strong> that feels off, a <strong style="font-weight: 700;">pitch</strong> that needs holes poked, or just the will to keep going — press the button and the right builder is on your screen.</p>
-      <p data-reveal="true" style="margin: 0; font-size: 15px;">Still have questions? <a href="#how" style="font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">Learn more about how 2AM works.</a></p>
+      <p data-reveal="true" style="margin: 0; font-size: 15px;">Still have questions? <a href="#faq" style="font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">Learn more about how 2AM works.</a></p>
     </div>
     <svg viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: -1px; width: 100%; height: 90px; display: block;"><path d="M0 0 C 420 90 1020 90 1440 0 L1440 90 L0 90 Z" fill="#FFFFFF"></path></svg>
   </section>
@@ -365,6 +368,84 @@
 
   
 
+  <section id="faq" style="background: #FFFFFF; padding: 160px clamp(16px, 2.4vw, 28px);">
+    <div data-faq="true" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(40px, 6vw, 96px); align-items: start;">
+      <div style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+        <span data-reveal="true" style="display: inline-block; padding: 6px 12px; border-radius: 6px; background: #9FE870; font-size: 14px; font-weight: 700; letter-spacing: -.01em;">Before you press the button</span>
+        <h2 data-reveal="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: clamp(28px, 5.4vw, 56px); line-height: 1.02; letter-spacing: -.03em; margin: 0;">Questions, answered.</h2>
+        <p data-reveal="true" style="margin: 0; font-size: clamp(15px, 1.5vw, 16px); color: rgba(10,27,42,.7);">Not here? Ask us — <a href="mailto:hey@2am.builders" style="font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">hey@2am.builders</a></p>
+      </div>
+      <div>
+        <div data-reveal="true" style="border-top: 1px solid rgba(10,27,42,.14); border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT0 }}" aria-expanded="{{ faqE0 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">Is this like Omegle?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR0 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG0 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">No. Nobody’s random here — you’re matched by what you’re building and what you need, everyone signs in with GitHub, and sessions are 25 minutes with a purpose. It’s closer to a co-working table than a roulette.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="true" style="border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT1 }}" aria-expanded="{{ faqE1 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">Do I have to be on camera?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR1 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG1 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">Never. Camera is optional and off by default. Most sessions are audio plus screen share — it’s about the work, not your face.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="true" style="border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT2 }}" aria-expanded="{{ faqE2 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">Is my screen and code safe?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR2 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG2 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">Sessions are peer-to-peer: your audio, screen and editor go directly to your match, not through our servers, and nothing is ever recorded. Share only the window you choose.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="true" style="border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT3 }}" aria-expanded="{{ faqE3 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">What if I get matched with someone unhelpful or weird?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR3 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG3 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">End the session anytime with one click — the timer ends it for you anyway at 25 minutes. Rate them after; people you flag never get matched with you again, and repeat offenders lose access.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="true" style="border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT4 }}" aria-expanded="{{ faqE4 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">What does it cost?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR4 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG4 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">Nothing. 2AM is free while we’re young. No card, no trial, no catch.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="true" style="border-bottom: 1px solid rgba(10,27,42,.14);">
+          <button type="button" onClick="{{ faqT5 }}" aria-expanded="{{ faqE5 }}" style="background: none; border: none; cursor: pointer; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; text-align: left;">
+            <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: clamp(17px, 1.9vw, 19px); font-weight: 700; color: #0A1B2A;">What if nobody’s online when I press the button?</span>
+            <span style="flex: none; font-size: 24px; font-weight: 400; color: #0A1B2A; transition: transform 250ms ease; transform: {{ faqR5 }};">+</span>
+          </button>
+          <div style="display: grid; grid-template-rows: {{ faqG5 }}; transition: grid-template-rows 280ms ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 32px 22px 0; font-size: clamp(15px, 1.5vw, 16px); line-height: 1.6; color: rgba(10,27,42,.7);">You’ll see the live count before you press it. If your exact match isn’t there, you wait in the queue and we ping you the moment someone fits — most matches happen in under a minute when builders are online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="cta" style="background: #FFFFFF; color: #0A1B2A; padding: 80px clamp(16px, 2.4vw, 28px);">
     <div style="max-width: 1240px; margin: 0 auto; container-type: inline-size; display: flex; flex-direction: column; align-items: flex-start; gap: 40px;">
       <h2 data-reveal="true" style="font-family: var(--ns-display); font-weight: var(--ns-weight); font-size: calc((clamp(34px, 7cqw, 104px)) * var(--ns-scale)); line-height: var(--ns-lh); letter-spacing: -.01em; margin: 0;">Tonight’s builders are already online.</h2>
@@ -385,7 +466,7 @@
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Safety</span>
-          <a href="#top" style="font-size: 15px;">Safety</a><a href="#top" style="font-size: 15px;">Report a session</a>
+          <a href="#faq" style="font-size: 15px;">FAQ</a><a href="#top" style="font-size: 15px;">Safety</a><a href="#top" style="font-size: 15px;">Report a session</a>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-family: 'Onest', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: #0A1B2A;">Legal</span>
@@ -800,6 +881,15 @@ class Component extends DCLogic {
       return document.querySelector('[data-quotes]');
     };
     const self = this;
+    const fq = (typeof this.state.faqOpen === 'number') ? this.state.faqOpen : 0;
+    const fv = {};
+    for (let n = 0; n < 6; n++) {
+      const k = n;
+      fv['faqT' + n] = () => self.setState({ faqOpen: self.state.faqOpen === k ? -1 : k });
+      fv['faqE' + n] = n === fq ? 'true' : 'false';
+      fv['faqR' + n] = n === fq ? 'rotate(45deg)' : 'none';
+      fv['faqG' + n] = n === fq ? '1fr' : '0fr';
+    }
     const qGo = (dir, e) => {
       const t = qTrack(e);
       if (!t || !t.children.length || !self.quotesGo) return;
@@ -822,6 +912,7 @@ class Component extends DCLogic {
         if (e.key === 'ArrowRight') qGo(1, e);
         else if (e.key === 'ArrowLeft') qGo(-1, e);
       },
+      ...fv,
       ...this.stepperVals()
     };
     return out;
